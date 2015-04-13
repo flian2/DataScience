@@ -3,8 +3,11 @@
 /assignment2/*
 /assignment2/!*.py
 /assignment3/*
+/assignment3/data/*
+/assignment3/solutions/*
 /assignment3/!*.py
 /assignment4/*
+/assignment4/pigtest/*
 /assignment4/!*.py
 /assignment5/*
 /assignment5/!*.py
