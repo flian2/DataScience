@@ -1,7 +1,7 @@
 /assignment1/*.txt
 /assignment1/*.html
 #/assignment1/!*.py
-/assignment2/*
+
 /assignment2/!*.sql
 /assignment3/*
 /assignment3/data/
