@@ -2,8 +2,12 @@
 /assignment1/*.html
 #/assignment1/!*.py
 
+/assignment2/*.txt
+/assignment2/*.db
+/assignment2/*.csv
+/assignment2/*.dylib
+
 /assignment2/!*.sql
-/assignment2/*
 /assignment3/*
 /assignment3/data/
 /assignment3/solutions/
