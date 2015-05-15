@@ -1,3 +1,11 @@
+**/*.json
+**/*.txt
+**/*.db
+**/*.csv
+**/*.dylib
+**/*.class
+**/*.jar
+
 /assignment1/*.txt
 /assignment1/*.html
 #/assignment1/!*.py
@@ -8,10 +16,7 @@
 /assignment2/*.dylib
 
 /assignment2/!*.sql
-/assignment3/*
-/assignment3/data/
-/assignment3/solutions/
-/assignment3/!*.py
+
 /assignment4/*
 /assignment4/pigtest/
 /assignment4/!*.py
