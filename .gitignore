@@ -1,3 +1,11 @@
+**/*.json
+**/*.txt
+**/*.db
+**/*.csv
+**/*.dylib
+**/*.class
+**/*.jar
+
 /assignment1/*.txt
 /assignment1/*.html
 #/assignment1/!*.py
