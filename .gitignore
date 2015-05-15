@@ -17,8 +17,3 @@
 
 /assignment2/!*.sql
 
-/assignment4/*
-/assignment4/pigtest/
-/assignment4/!*.py
-/assignment5/*
-/assignment5/!*.py
