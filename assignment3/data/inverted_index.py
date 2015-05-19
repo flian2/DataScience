@@ -1,5 +1,6 @@
 import MapReduce
 import sys
+import json
 
 # inverted index
 mr = MapReduce.MapReduce()
@@ -14,15 +15,14 @@ def mapper(record):
     value = record[1]
     words = value.split()
     for w in words:
-      mr.emit_intermediate(w, 1)
+      mr.emit_intermediate(w, key)
 
 def reducer(key, list_of_values):
     # key: word
-    # value: list of occurrence counts
-    total = 0
-    for v in list_of_values:
-      total += v
-    mr.emit((key, total))
+    # value: list of document id
+    # remove duplicate
+    id_list = list(set(list_of_values))
+    mr.emit((key, id_list))
 
 # Do not modify below this line
 # =============================
