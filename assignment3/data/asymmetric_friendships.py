@@ -11,9 +11,10 @@ mr = MapReduce.MapReduce()
 def mapper(record):
     # key: person
     # value: his friend
-    sorted_record = sorted(record)
-    key = sorted_record[0]
-    mr.emit_intermediate(key, sorted_record)
+    # sorted_record = sorted(record)
+    # key = sorted_record[0]
+    # mr.emit_intermediate(key, sorted_record)
+    mr.emit(record[0],record[1])
     
 
 def reducer(key, list_of_values):
