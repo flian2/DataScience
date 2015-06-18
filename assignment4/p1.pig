@@ -26,6 +26,7 @@ count_by_object_ordered = order count_by_object by (count)  PARALLEL 50;
 -- store the results in the folder /user/hadoop/example-results
 -- store count_by_object_ordered into '/user/hadoop/example-results' using PigStorage();
 
+fs -mkdir /user/hadoop
 store record_count into '/user/hadoop/p1A' using PigStorage();
 
 cat /user/hadoop/p1A
