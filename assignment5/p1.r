@@ -28,4 +28,31 @@ predicted_svm = predict(model, testPart, type = "class");
 accuracy_svm = sum(predicted_svm == testPart$pop)/dim(testPart)[1];
 
 # construct confusion matrix
-table(pred = predicted_svm, true = testingdata$pop)
+table(pred = predicted_svm, true = testingdata$pop);
+
+# remove data with fileid 208
+qplot( raw_data$time, raw_data$chl_big, color = raw_data$pop);
+clean_data = raw_data[which(raw_data$file_id != 208),];
+
+## sample the clean data
+set.seed(1457);
+trainIndex <- createDataPartition(clean_data$pop, p = .5,
+                                  list = FALSE,
+                                  times = 1);
+trainPart <- clean_data[trainIndex,];
+testPart <- clean_data[-trainIndex,];
+
+## decision tree
+fol <- formula(pop ~ fsc_small + fsc_perp + fsc_big + pe + chl_big + chl_small)
+model1 <- rpart(fol, method="class", data = trainPart);
+predicted_label <- predict(model1, testPart, type = "class");
+accuracy_tree = sum(predicted_label == testPart$pop)/dim(testPart)[1];
+
+## svm 
+model3 <- svm(fol, data=trainPart);
+predicted_svm = predict(model, testPart, type = "class");
+accuracy_svm = sum(predicted_svm == testPart$pop)/dim(testPart)[1];
+
+## random forest
+
+
