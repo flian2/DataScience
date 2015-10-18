@@ -1,8 +1,10 @@
 import sys
 import json
 
-def hw():
-    print 'Hello, world!'
+def uni2utf8(uni_string):
+    unicode_string = uni_string
+    encoded_string = unicode_string.encode('utf-8')
+    return encoded_string
 
 def lines(fp):
     print str(len(fp.readlines()))
@@ -30,7 +32,7 @@ def main():
     
     for word in freq.keys():
         value = (float) (freq[word])/sum
-        print word, value
+        print uni2utf8(word), value
 
 
     # print 'number of lines', n
