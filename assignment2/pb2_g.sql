@@ -7,9 +7,8 @@ SELECT c FROM (
 		FROM a,b
 		WHERE a.col_num = b.row_num) 
 	GROUP BY row, col
-	) c
+	) 
 WHERE row = 2 AND col = 3;
-
 
 
 

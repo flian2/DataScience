@@ -1,2 +1,4 @@
-SELECT term FROM Frequency
-WHERE docid="10398_txt_earn" AND count = 1
+SELECT count (*) from (
+    SELECT term FROM Frequency
+    WHERE docid="10398_txt_earn" AND count = 1
+    );
