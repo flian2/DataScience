@@ -4,7 +4,7 @@
 # Build a dictionary new_scores to store the derived (term, score)
 # iterate each line of tweets to cummulate scores
 
-# for each word in tweet, if it's not contained in old list, add as an entry in the new list
+# for each word in tweet, if it's not contained in old list, sum the derived score in the new list
 
 import sys
 import json

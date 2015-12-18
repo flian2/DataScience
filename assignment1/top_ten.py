@@ -26,10 +26,9 @@ def main():
                 if encoded.get(u'entities').get(u'hashtags'):
                     tags = encoded.get(u'entities').get(u'hashtags')
                     for tag in tags:
-                        # print tag[u'text']
+                        # hash tag has 'text' and 'indices'
                         freq[tag[u'text']] = freq.get(tag[u'text'],0) + 1
-                # for tag in tags:
-                #     freq[tag] = freq.get(tag,0) + 1
+                
 
     sorted_words = sorted(freq.keys(), key = freq.get, reverse = True)
     n = 1

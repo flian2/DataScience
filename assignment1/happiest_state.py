@@ -1,3 +1,7 @@
+# for each tweet, extract the state info
+# Build a dictionary state => score
+# For each tweet, sum up scores to the dictionary key "state"
+# Sort the dictionary according to values
 import sys
 import json
 
