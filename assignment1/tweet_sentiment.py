@@ -1,7 +1,9 @@
 import sys
 import json
 
-
+# Derive the sentiment of each tweet
+# 1. Build dictionary for the list file
+# 2. For each word in a tweet, if it's contained in the dictionary, sum up the sentiment scores
 def lines(fp):
     print str(len(fp.readlines()))
 
@@ -33,11 +35,9 @@ def main():
                 if scores.get(word):
                     sum_score += scores[word]
             print sum_score
-
-
-        
         n += 1
-    # print 'number of lines', n
+    
 
 if __name__ == '__main__':
     main()
+    # python tweet_sentiment.py AFINN-111.txt output.txt

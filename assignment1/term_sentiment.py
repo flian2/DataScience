@@ -4,6 +4,8 @@
 # Build a dictionary new_scores to store the derived (term, score)
 # iterate each line of tweets to cummulate scores
 
+# for each word in tweet, if it's not contained in old list, add as an entry in the new list
+
 import sys
 import json
 
@@ -44,8 +46,6 @@ def main():
                 if not scores.get(words[i]):
                     new_word = words[i];
                     # find the nearest 2 words in afinnfile
-                    if next < i and next > -1:
-                        prev = next
                     next = i
                     while next < len(words):
                         if not scores.get(words[next]): 
@@ -57,23 +57,14 @@ def main():
                         new_scores[new_word] = new_scores.get(new_word,0) + (scores.get(words[next])+scores.get(words[prev]))/float(2)
                     elif next < len(words) and prev == -1:
                         new_scores[new_word] = new_scores.get(new_word,0) + scores.get(words[next])
-                    # else:
-                    #     derived_score = 0 # not found
-                    # print 'Derived term:'
-                    # print  uni2utf8(words[i]), derived_score
-                    # if prev > -1 and prev < len(words):
-                    #     print 'left neighbour: ', words[prev], scores.get(words[prev])
-                    # if next > -1 and next < len(words):
-                    #     print 'right neighbour: ', words[next], scores.get(words[next])
+                else: # word in score
+                    prev = i
             n += 1
     # print the new scores
     for word in new_scores:
         print uni2utf8(word), float(new_scores[word])
 
 
-        
-
-
-
 if __name__ == '__main__':
     main()
+    # python term_sentiment.py AFINN-111.txt output.txt
