@@ -16,23 +16,15 @@ def mapper(record):
 
 def reducer(key, list_of_values):
     # key: id
-    # value: order + line item
-    # new_record = []
-    # print "==="
-    # for record in list_of_values:
-    #   print record
-    # print "==="
-
+    # value: the entire record
+    
     for record1 in list_of_values:
       if record1[0] == "order":
         for record2 in list_of_values:
           if record2[0] == "line_item":
             
-            # print "==="
-            # print record1
-            # print record2
             new_record = [];
-            new_record.extend(record1);
+            new_record.extend(record1); # extend(): append another iterable to the end of array
             new_record.extend(record2);
             mr.emit(new_record)
 

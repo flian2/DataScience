@@ -25,7 +25,7 @@ def reducer(key, list_of_values):
 	# value is a(i,j) or b(j,k) when only single exists
     dic = {}
     for tup in list_of_values:
-    	if not (tup[1] in dic):
+    	if not (tup[1] in dic): # for each k, collect the value a(i,k) or b(k,j)
     		dic[tup[1]] = tup[2]
     	else:
     		prod = dic[tup[1]] * tup[2]
