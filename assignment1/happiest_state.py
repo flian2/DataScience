@@ -129,7 +129,7 @@ def main():
 
     # print the top 2 states
     states_sorted = sorted(state_scores.keys(), key=state_scores.get, reverse=True)
-    print states_sorted[0]
+    print states_sorted[:10]
 
 if __name__ == '__main__':
     main()
